@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birdario</title>
+<meta name="description" content="Birdario – pedigree book for canaries and cage birds.">
+<link rel="canonical" href="https://emreatasoy.github.io/birdario-web/">
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+<script>
+  // Önce elle seçilen dil, sonra tarayıcı dili, yoksa İngilizce
+  (function () {
+    var langs = ['tr', 'en', 'es', 'it', 'de', 'fr', 'ar'];
+    var pick = null;
+    try { pick = localStorage.getItem('lang'); } catch (e) {}
+    if (langs.indexOf(pick) < 0) {
+      pick = 'en';
+      var list = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < list.length; i++) {
+        var code = String(list[i]).slice(0, 2).toLowerCase();
+        if (langs.indexOf(code) >= 0) { pick = code; break; }
+      }
+    }
+    location.replace(pick + '/' + location.hash);
+  })();
+</script>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #fbf8f1; color: #1f2a44; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+  ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 18px; justify-content: center; }
+  img { margin: 0 auto 12px; display: block; }
+</style>
+</head>
+<body>
+<main>
+  <img src="assets/img/mark.svg" width="64" height="64" alt="Birdario">
+  <ul><li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="en/" hreflang="en" lang="en">English</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="it/" hreflang="it" lang="it">Italiano</a></li><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="ar/" hreflang="ar" lang="ar">العربية</a></li></ul>
+</main>
+</body>
+</html>
