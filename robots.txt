@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://emreatasoy.github.io/birdario-web/sitemap.xml
+Sitemap: https://birdario.com/sitemap.xml
