@@ -84,7 +84,8 @@ figure { margin: 0; }
 /* Üst bar */
 .top {
   position: sticky; top: 0; z-index: 20;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  /* daha saydam olunca lacivert bölüm üstünde griye dönüyor */
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
   backdrop-filter: saturate(1.4) blur(14px);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   border-block-end: 1px solid transparent;
@@ -145,6 +146,11 @@ figure { margin: 0; }
 a.store:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgb(31 42 68 / 60%); }
 .store.is-soon { background: transparent; color: var(--ink); border: 1.5px solid var(--line); cursor: default; }
 .store.is-soon small { color: var(--amber-text); opacity: 1; font-weight: 700; }
+/* Dar ekranda alt alta, ikisi aynı genişlikte */
+@media (max-width: 560px) {
+  .stores { display: grid; grid-template-columns: min(100%, 320px); }
+  .store { justify-content: center; }
+}
 @media (prefers-color-scheme: dark) {
   .store { background: var(--canary); color: var(--navy); }
   .store.is-soon { background: transparent; color: var(--ink); }
